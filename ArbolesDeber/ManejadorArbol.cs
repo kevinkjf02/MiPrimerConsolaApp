@@ -2,35 +2,40 @@
 {
     class ManejadorArbol
         {
-        internal int ContarNumeroNiveles(Nodo nodo)
+        internal string ImprimirCaracteristicasArbol(Nodo nodo, Notacion notacion)
         {
             int contador = 0;
-            foreach (Nodo actual in nodo.Hijos)
+            switch (notacion)
             {
-                contador += actual.Valor.Length;
-            }
-            return contador;
-        }
-        internal int ContarNumeroHojas(Nodo nodo)
-        {
-            int contador = 0;
-            foreach (Nodo actual in nodo.Hijos)
-            {
-                contador += actual.Valor.Length + actual.Hijos.Count;
-            }
-            return contador;
-        }
+                case Notacion.Niveles:
+                
+                    foreach (Nodo actual in nodo.Hijos)
+                    {
+                        contador += actual.Valor.Length;
+                    }
+                    return contador.ToString();
 
-        internal int ContarNumeroNodos(Nodo nodo)
-        {
-            int contador = 0;
-            contador += nodo.raizNodo + nodo.Hijos.Count;
-            foreach (Nodo actual in nodo.Hijos)
-            {
-                contador += actual.Hijos.Count;
+                case Notacion.Nodos:
+                    
+                    contador += nodo.raizNodo + nodo.Hijos.Count;
+                    foreach (Nodo actual in nodo.Hijos)
+                    {
+                        contador += actual.Hijos.Count;
+                    }
+                    return contador.ToString();
+                case Notacion.Hijos:
+                    
+                    foreach (Nodo actual in nodo.Hijos)
+                    {
+                        contador += actual.Valor.Length + actual.Hijos.Count;
+                    }
+                    return contador.ToString();
+
+                default:
+                    return "Tipo de notacion no implementada";
+
             }
-            return contador;
-        } 
+        }
     }
 }
 

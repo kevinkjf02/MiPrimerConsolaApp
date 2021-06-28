@@ -51,9 +51,9 @@ namespace ArbolesDeber.app
                 }
             };
             ManejadorArbol manejadorArbol = new();
-            Console.WriteLine($"{"Los niveles de nodos son: " + "\n"} {manejadorArbol.ContarNumeroNiveles(raiz)}");
-            Console.WriteLine($"{"El numero de hojas es: " + "\n"} {manejadorArbol.ContarNumeroHojas(raiz)}");
-            Console.WriteLine($"{"El numero de Nodos es: " + "\n"} {manejadorArbol.ContarNumeroNodos(raiz)}");
+            Console.WriteLine($"{"El numero de Nodos es: " + "\n"} {manejadorArbol.ImprimirCaracteristicasArbol(raiz, Notacion.Niveles )}");
+            Console.WriteLine($"{"El numero de hojas es: " + "\n"} {manejadorArbol.ImprimirCaracteristicasArbol(raiz, Notacion.Hijos)}");
+            Console.WriteLine($"{"El numero de Nodos es:" + "\n"} {manejadorArbol.ImprimirCaracteristicasArbol(raiz, Notacion.Nodos)}");
             Console.ReadLine();
         }
     }
