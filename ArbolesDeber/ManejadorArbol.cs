@@ -23,7 +23,7 @@
                         contador += actual.Hijos.Count;
                     }
                     return contador.ToString();
-                case Notacion.Hijos:
+                case Notacion.Hojas:
                     
                     foreach (Nodo actual in nodo.Hijos)
                     {
@@ -33,7 +33,6 @@
 
                 default:
                     return "Tipo de notacion no implementada";
-
             }
         }
     }

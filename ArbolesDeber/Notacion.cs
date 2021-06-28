@@ -3,6 +3,6 @@
     internal enum Notacion {
         Niveles,
         Nodos,
-        Hijos
+        Hojas
     }
 }
